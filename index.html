@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Vista Residences | Visualisierung Süden</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">ALPINE VISTA <span>RESIDENCES</span></a>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#units">Units</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal()">Request Dossier</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">Swiss Alpine Architecture</span>
+            <h1>Visualisierung Süden</h1>
+            <p>Exclusive eco-friendly hillside development blending modern timber chalet architecture with integrated solar energy systems.</p>
+            <div class="hero-buttons">
+                <a href="#overview" class="btn btn-primary">Explore Project</a>
+                <button class="btn btn-outline" onclick="openModal()">Get Sales Dossier</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Overview -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sustainable Hillside Living</h2>
+                <p>Designed for harmony with nature in the heart of Switzerland</p>
+            </div>
+
+            <!-- Project Image Display -->
+            <div class="image-wrapper">
+                <img src="swiss-project.jpeg" alt="Alpine Vista Residences - Visualisierung Süden" class="main-project-img" id="heroImage">
+            </div>
+
+            <!-- Highlights Grid -->
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">☀️</div>
+                    <h3>Solar Integrated Roofs</h3>
+                    <p>State-of-the-art photovoltaic roofing systems engineered for optimal energy yield along the south-facing slope.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌲</div>
+                    <h3>Swiss Timber Build</h3>
+                    <p>Premium eco-conscious wood construction delivering modern aesthetics and superior thermal insulation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⛰️</div>
+                    <h3>Panoramic Views</h3>
+                    <p>Terraced elevation layout ensuring unobstructed mountain views and maximum natural sunlight exposure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture & Features -->
+    <section id="architecture" class="section section-dark">
+        <div class="container grid grid-2">
+            <div class="content-block">
+                <h2>Precision Engineering & Natural Aesthetics</h2>
+                <p>The "Visualisierung Süden" project embodies modern Swiss construction principles. Each chalet unit is carefully angled to capture peak daylight while preserving local flora and natural terrain.</p>
+                <ul class="feature-list">
+                    <li>✓ High-efficiency triple glazing</li>
+                    <li>✓ Private green terraces & landscaped paths</li>
+                    <li>✓ Dedicated recreational zones & private parking</li>
+                    <li>✓ Underground geothermal heating integration</li>
+                </ul>
+            </div>
+            <div class="stats-card">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Eco-Friendly Energy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">A+</span>
+                    <span class="stat-label">Swiss Efficiency Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Süden</span>
+                    <span class="stat-label">Optimal South Exposure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unit Selection -->
+    <section id="units" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Available Units</h2>
+                <p>Select a residence type to explore layout specifications</p>
+            </div>
+            <div class="unit-selector">
+                <button class="tab-btn active" onclick="switchUnit('chalet')">Chalets (4.5 Rooms)</button>
+                <button class="tab-btn" onclick="switchUnit('penthouse')">Penthouses (5.5 Rooms)</button>
+            </div>
+            <div id="unit-details" class="card unit-card">
+                <h3 id="unit-title">Chalet Residence - Type A</h3>
+                <p id="unit-desc">Spacious multi-level timber chalet with panoramic south-facing balcony, integrated solar roof, and private garden area.</p>
+                <div class="unit-specs">
+                    <span><strong>Living Area:</strong> <span id="unit-area">165 m²</span></span>
+                    <span><strong>Rooms:</strong> <span id="unit-rooms">4.5</span></span>
+                    <span><strong>Starting Price:</strong> <span id="unit-price">CHF 1,450,000</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mortgage Calculator -->
+    <section id="calculator" class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Swiss Mortgage Estimator</h2>
+                <p>Calculate your estimated monthly payment based on Swiss financing standards</p>
+            </div>
+            <div class="calc-box card">
+                <div class="calc-input">
+                    <label for="priceRange">Property Price (CHF): <span id="priceVal">1,450,000</span></label>
+                    <input type="range" id="priceRange" min="800000" max="3000000" step="50000" value="1450000" oninput="updateCalc()">
+                </div>
+                <div class="calc-input">
+                    <label for="equityRange">Down Payment (20% Minimum): <span id="equityVal">290,000</span> CHF</label>
+                    <input type="range" id="equityRange" min="20" max="50" step="5" value="20" oninput="updateCalc()">
+                </div>
+                <div class="calc-result">
+                    <span>Estimated Monthly Cost:</span>
+                    <h3 id="monthlyResult">CHF 2,175 / month</h3>
+                    <small>*Based on standard 2.25% Swiss interest rates and 1% annual maintenance allowance.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="dossierModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Request Sales Dossier</h2>
+            <p>Enter your details to receive the full PDF documentation for Visualisierung Süden.</p>
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="e.g. Hans Müller">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="name@domain.ch">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+41 79 000 00 00">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Download PDF Dossier</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Alpine Vista Residences. Visualisierung Süden Project Presentation.</p>
+            <p>Designed for submission to Swiss Real Estate Development Group.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
