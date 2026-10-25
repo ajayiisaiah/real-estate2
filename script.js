@@ -73,3 +73,29 @@ function handleFormSubmit(e) {
     alert('Thank you! The official PDF Sales Dossier for Visualisierung Süden has been sent to your email.');
     closeModal();
 }
+// Inside your script.js file:
+const propertyData = {
+    chalet: {
+        title: "Chalet Residence - Type A",
+        desc: "Spacious multi-level timber chalet with panoramic south-facing balcony.",
+        area: "165 m²",
+        rooms: "4.5",
+        price: "CHF 1,450,000"
+    },
+    penthouse: {
+        title: "Penthouse Residence - Type B",
+        desc: "Exclusive top-floor layout with wrap-around terrace and premium views.",
+        area: "210 m²",
+        rooms: "5.5",
+        price: "CHF 2,150,000"
+    }
+};
+
+function switchUnit(type) {
+    const unit = propertyData[type];
+    document.getElementById("unit-title").innerText = unit.title;
+    document.getElementById("unit-desc").innerText = unit.desc;
+    document.getElementById("unit-area").innerText = unit.area;
+    document.getElementById("unit-rooms").innerText = unit.rooms;
+    document.getElementById("unit-price").innerText = unit.price;
+}
